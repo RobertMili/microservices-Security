@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+    container_name: carthief
+    depends_on:
+      - mongodb
+    environment:
+      MONGO_HOST: dbMongoDB
+      MONGO_PORT: 27017
+
+  mongodb:
+    image: 'mongo:latest'
+    container_name: product-server-mongodb
+    volumes:
+      - db:/var/lib/mongodb
+    ports:
+      - "27017:27017"
+volumes:
+  db:
