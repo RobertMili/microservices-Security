@@ -11,6 +11,7 @@ services:
       MONGO_HOST: dbMongoDB
       MONGO_PORT: 27017
 
+
   rabbitmq:
     image: rabbitmq:management
     ports:
